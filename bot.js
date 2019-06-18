@@ -14,27 +14,6 @@ client.on('ready', () => {
  });
 
 
-Client.on("message", message => {
-    var prefix = "$";
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix - "bcv2")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
- if (!args[1]) {
-                                let embed3 = new Discord.RichEmbed()
-                                .setDescription(":white_check_mark: | تم ارسال للكل رساله فارغه")
-                                .setColor("#FF0000")
-                                message.channel.sendEmbed(embed3);
-                            } else {
-
-                            let embed4 = new Discord.RichEmbed()
-                                                            .setDescription(':white_check_mark: | تم ارسال للكل الرساله !')
-                                                            .setColor("#008000")
-                                message.channel.sendEmbed(embed4);
-                                                      message.delete();
-                            }
-                          }
-});
 
 
 
@@ -131,9 +110,9 @@ return;
                                       .setDescription(`
                                       __**BC Commands**__
                                       『$bc/ ارسال برودكاست للجميع』
-                                      『$bcv2/ ارسال برودكاست للجميع بشكل ثاني』
+                                      『$ping/ سرعة البوت』
                                       『$obc/ ارسال برودكاست للونلاين』
-                                     
+                                      『$bcbot/  ارسال برودكاست للجميع مستخدمي البوت』  
 
                                 `)
                                    message.author.sendEmbed(embed)
