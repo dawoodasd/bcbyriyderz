@@ -102,8 +102,8 @@ return;
 
 
   client.on("message", message => {
-                                    var prefix = "-";
-                                 if (message.content === "-help") {
+                                    var prefix = "$";
+                                 if (message.content === "$help") {
                                      message.channel.send(' ');
                                   const embed = new Discord.RichEmbed() 
                                       .setColor("RANDOM")
