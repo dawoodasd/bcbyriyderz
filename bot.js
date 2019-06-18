@@ -128,11 +128,38 @@ return;
 
 
 
+client.on('message', message => { //By |.iiMostafaYT#1001
+    if (message.content.startsWith("$bot")) { //By |.iixdavied#9908
+    message.channel.send({ //By |.iixdavied#9908
+        embed: new Discord.RichEmbed() //By |.iixdavied#9908
+            .setAuthor(client.user.username,client.user.avatarURL) //By |.iixdavied#9908
+            .setThumbnail(client.user.avatarURL) //By |.iixdavied#9908
+            .setColor('RANDOM') //By |.iiMostafaYT#1001
+            .setTitle('Info Riyderz bot.') //By |.iixdavied#9908
+            .addField('**My Ping**' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true) //By |.iixdavied#9908
+            .addField('**RAM Usage**', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true) //By |.iixdavied#9908
+            .addField('**Servers**', [client.guilds.size], true) //By |.iixdavied#9908
+            .addField('**Channels**' , `[ ${client.channels.size} ]` , true) //By |.iixdavied#9908
+            .addField('**Users**' ,`[ ${client.users.size} ]` , true) //By |.iixdavied#9908
+            .addField('**My Name**' , `[ ${client.user.tag} ]` , true) //By |.iixdavied#9908
+            .addField('**My ID**' , `[ ${client.user.id} ]` , true) //By |.iixdavied#9908
+            .addField('**DiscordJS**' , `[ ${Discord.version} ]` , true) //By |.iixdavied#9908
+            .addField('**NodeJS**' , `[ ${process.version} ]` , true) //By |.iixdavied#9908
+            .addField('**Arch**' , `[ ${process.arch} ]` , true) //By |.iixdavied#9908
+            .addField('**Platform**' , `[ ${process.platform} ]` , true) //By |.iixdavied#9908
+                  .addField('**My Prefix**' , `[ ${prefix} ]` , true) //By |.iixdavied#9908
+                  .addField('**My Language**' , `[ Java Script ]` , true) //By |.iixdavied#9908
+                  .setFooter('By | .iixdavied#9908') //By |.iixdavied#9908
+    }) //By |.iixdavied#9908
+} //By |.iixdavied#9908
+}); //By |.iixdavied#9908
+
+
 
 
 client.on('message', message => {
     if(!message.channel.guild) return;
-if (message.content.startsWith('ping')) {
+if (message.content.startsWith('$ping')) {
 if(!message.channel.guild) return;
 var msg = `${Date.now() - message.createdTimestamp}`
 var api = `${Math.round(client.ping)}`
