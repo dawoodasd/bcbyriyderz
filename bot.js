@@ -19,7 +19,16 @@ client.on('ready', () => {
 
 
 
-
+client.on('message', message => { //iTzMurtaja#8951
+if(message.content.startsWith(prefix + "offbc")) { //iTzMurtaja#8951
+if(message.author.bot) return; //iTzMurtaja#8951
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`**✖｜You need premessions.`); //iTzMurtaja#8951
+var args = message.content.split(" ").slice(1).join(" ") //iTzMurtaja#8951
+message.channel.send(`Done.`) //iTzMurtaja#8951
+message.guild.members.filter(m => m.presence.status === 'offline').forEach(m => { //iTzMurtaja#8951
+    m.send(`${args}`) //iTzMurtaja#8951
+  }); //iTzMurtaja#8951
+}}); //iTzMurtaja#8951
 
 
 
@@ -101,6 +110,7 @@ return;
                                       『$boc/ ارسال برودكاست لاونلاين』
                                       『$bot/ معلومات البوت』
                                       『$bcv2/ ارسال برودكاست للجميع بشكل اخر』
+                                      『$offbc/ ارسال برودكاست للأعضاء الاوفلاين فقط』
                                 `)
                                    message.author.sendEmbed(embed)
                                     
